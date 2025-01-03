@@ -2,9 +2,9 @@ with
     source_customer as (
         select
               cast(customerid as int) as id_cliente
-            , cast(personid as int) as id_pessoa
-            , cast(storeid as int) as id_loja
-            , cast(territoryid as int) as id_territory        
+            , personid as id_pessoa
+            , storeid as id_loja
+            , territoryid as id_territorio_cliente        
         from {{ source('raw_sap_aw', 'customer') }}
     )
 

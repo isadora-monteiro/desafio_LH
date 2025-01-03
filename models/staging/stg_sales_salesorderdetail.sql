@@ -1,7 +1,7 @@
 with
     source_salesorderdetail as (
         select
-            salesorderdetailid as id_pedido_item
+            cast(salesorderdetailid as int) as id_pedido_item
             , salesorderid as id_pedido
             , orderqty as quantidade_produto
             , productid as id_produto

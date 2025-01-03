@@ -33,10 +33,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   desafio_LH: # <-- Name of the project. If you renamed your project you have to change this as well
-    staging: view
-    intermediate: view
-    marts: table
-    materialized: view
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts: 
+      +materialized: table
 
 
 seeds:

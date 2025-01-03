@@ -46,4 +46,11 @@ sources:
           - name: "salesorderdetailid"
             tests:
               - unique
-              - not_null              
+              - not_null     
+      - name: "salesorderheadersalesreason"
+        description: "Tabela com o id do motivo da venda."
+        columns:
+          - name: "salesorderid"
+            tests:
+              - unique
+              - not_null         

@@ -1,7 +1,7 @@
 with
     source_salesorderheader as (
         select
-            salesorderid as id_pedido
+            cast(salesorderid as int) as id_pedido
             , orderdate as data_pedido
             , onlineorderflag as flag_pedido_online
             , customerid as id_cliente
