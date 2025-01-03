@@ -33,3 +33,17 @@ sources:
             tests:
               - unique
               - not_null
+      - name: "salesorderheader"
+        description: "Tabela com o cabeçalho de pedidos."
+        columns:
+          - name: "salesorderid"
+            tests:
+              - unique
+              - not_null
+      - name: "salesorderdetail"
+        description: "Tabela com os itens de pedidos."
+        columns:
+          - name: "salesorderdetailid"
+            tests:
+              - unique
+              - not_null              
