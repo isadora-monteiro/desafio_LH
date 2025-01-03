@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: raw_sap_aw
+    schema: raw_sap_aw
+    loaded_at_field: cast(ind_extraction_date as timestamp)
+    tables:
+      - name: "customer"
+        description: "Tabela de clientes."
+        columns:
+          - name: customerid
+            tests:
+              - unique
+              - not_null
+      - name: "product"
+        description: "Tabela de produtos."
+        columns:
+          - name: productid
+            tests:
+              - unique
+              - not_null
+      - name: "salesreason"
+        description: "Tabela de motivo da venda."
+        columns:
+          - name: "salereasonid"
+            tests:
+              - unique
+              - not_null
+      - name: "salesperson"
+        description: "Tabela de vendedores."
+        columns:
+          - name: "salespersonid"
+            tests:
+              - unique
+              - not_null
