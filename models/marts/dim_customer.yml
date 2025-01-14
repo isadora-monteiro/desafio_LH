@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: 'Tabela de cadastro de clientes'
+    columns:
+      - name: 'sk_cliente'
+        description: "Chave substituta da tabela de clientes dim_customer."
+        tests:
+          - unique
+          - not_null
+      
+      - name: 'id_cliente'
+        description: "Chave primária da tabela de clientes customer."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'id_pessoa'
+        description: "Chave primária da tabela de pessoas físicas person"
+        tests:
+          - unique
+          - not_null
+
+      - name: 'id_loja'
+        description: "Chave primária da tabela de lojas store"
+        tests:
+          - unique
+          - not_null
+
+      - name: 'id_territorio_vendas'
+        description: "Chave primária da tabela de terittórios salesterritory"

@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_salesperson
+    description: 'Tabela de cadastro de vendedores'
+    columns:
+      - name: 'sk_entidade_empresarial'
+        description: "Chave substituta da tabela de vendedores dim_salesperson."
+        tests:
+          - unique
+          - not_null
+      
+      - name: 'id_entidade_empresarial'
+        description: "Chave primária da tabela de vendedores salesperson."
+        tests:
+          - unique
+          - not_null
+      
+      - name: 'id_territorio_vendedor'
+        description: "Chave primária da tabela de vendedores salesperson."
+        tests:
+          - unique
+          - not_null

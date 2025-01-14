@@ -53,4 +53,32 @@ sources:
           - name: "salesorderid"
             tests:
               - unique
-              - not_null         
+              - not_null    
+      - name: "salesterritory"
+        description: "Tabela com os itens de territorio."
+        columns:
+          - name: "territoryid"
+            tests:
+              - unique
+              - not_null   
+      - name: "countryregion"
+        description: "Tabela com os itens de regiao."
+        columns:
+          - name: "countryregioncode"
+            tests:
+              - unique
+              - not_null                   
+      - name: "stateprovince"
+        description: "Tabela com os itens de provincia."
+        columns:
+          - name: "stateprovinceid"
+            tests:
+              - unique
+              - not_null    
+      - name: "address"
+        description: "Tabela com os itens de endereco."
+        columns:
+          - name: "adressid"
+            tests:
+              - unique
+              - not_null  

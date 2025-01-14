@@ -4,7 +4,7 @@ with
               cast(customerid as int) as id_cliente
             , personid as id_pessoa
             , storeid as id_loja
-            , territoryid as id_territorio_cliente        
+            , territoryid as id_territorio_vendas       
         from {{ source('raw_sap_aw', 'customer') }}
     )
 

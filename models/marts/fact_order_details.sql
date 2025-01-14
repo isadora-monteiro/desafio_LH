@@ -1,13 +1,21 @@
 with
     order_details as (
         select 
-            sod.*
-            , p.nome_produto
-            , p.custo_padrao_produto         
-        from {{ ref('stg_sales_salesorderdetail')}} sod
-        left join {{ ref('stg_production_product')}} p
-            on sod.id_produto = p.id_produto
+              id_pedido_item
+            , id_pedido
+            , quantidade_produto
+            , id_produto
+            , id_oferta
+            , preco_unit
+            , preco_unit_desconto       
+        from {{ ref('stg_sales_salesorderdetail')}} 
+    ),
+    order_details_with_sk as (
+        select
+            {{ numeric_surrogate_key(['id_pedido_item']) }} as sk_pedido_item
+            , *
+        from order_details
     )
 
 select *
-from order_details
+from order_details_with_sk

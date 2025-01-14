@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: fact_order_details
+    description: 'Tabela de registros dos pedidos'
+    columns:
+      - name: 'sk_pedido_item'
+        description: "Chave substituta da tabela de pedido_items salesorderdetails."
+        tests:
+          - unique
+          - not_null
+      
+      - name: 'id_pedido_item'
+        description: "Chave primária da tabela de pedido_items salesorderdetails."
+        tests:
+          - unique
+          - not_null
+      
+      - name: 'sk_pedido'
+        description: "Chave substituta da tabela de pedidos salesorder."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'quantidade_produto'
+        description: "unidades do produto"
+        tests:
+          - not_null
+
+      - name: 'id_produto'
+        description: "Chave primária da tabela de produtos product"
+        tests:
+          - unique
+          - not_null
+
+      - name: 'id_oferta'
+        description: "Chave primária da tabela de oferta offer"
+
+      - name: 'preco_unit'
+        description: "preco unitário do produto"
+        tests:
+          - not_null
+
+      - name: 'preco_unit_desconto'
+        description: "preco unitário do produto descontando a oferta"
+        tests:
+          - not_null

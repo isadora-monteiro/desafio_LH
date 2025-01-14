@@ -1,0 +1,84 @@
+version: 2
+
+models:
+  - name: fact_orders
+    description: 'Tabela dos pedidos'
+    columns:
+      - name: 'sk_pedido'
+        description: "Chave substituta da tabela de pedidos salesorderheader."
+        tests:
+          - unique
+          - not_null
+      
+      - name: 'id_pedido'
+        description: "Chave primária da tabela de pedidos salesorderheader."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'data_pedido'
+        description: "data de lançamento do pedido"
+        tests:
+          - not_null
+
+      - name: 'flag_pedido_online'
+        description: "booleano que afirma se o pedido foi efetuado no site "
+        tests:
+          - not_null
+
+      - name: 'sk_cliente'
+        description: "Chave substituta da tabela de clientes dim_customer."
+        tests:
+          - not_null
+
+      - name: 'sk_vendedor'
+        description: "Chave substituta da tabela de vendedores dim_salesperson."
+        tests:
+          - not_null
+
+      - name: 'sk_territorio'
+        description: "Chave substituta da tabela de territorios dim_territory."
+        tests:
+          - not_null
+
+      - name: 'sk_endereco'
+        description: "Chave substituta da tabela de territorios dim_territory."
+        tests:
+          - not_null
+
+      - name: 'sk_motivo_venda'
+        description: "Chave substituta da tabela de territorios dim_territory."
+        tests:
+          - not_null
+
+      - name: 'nome_motivo_venda'
+        description: "Chave substituta da tabela de territorios dim_territory."
+        tests:
+          - not_null
+
+      - name: 'tipo_motivo_venda'
+        description: "Chave substituta da tabela de territorios dim_territory."
+        tests:
+          - not_null
+
+      - name: 'subtotal'
+        description: "somatorio de valores unitários"
+        tests:
+          - not_null
+
+      - name: 'taxa'
+        description: "taxação "
+        tests:
+          - not_null
+          
+      - name: 'frete'
+        description: "frete"
+        tests:
+          - not_null
+          
+      - name: 'total'
+        description: "somatorio do subtotal, frete e taxa"
+        tests:
+          - not_null
+
+

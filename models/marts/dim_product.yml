@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: 'Tabela de cadastro de produtos'
+    columns:
+      - name: 'sk_produto'
+        description: "Chave substituta da tabela de produtos dim_product."
+        tests:
+          - unique
+          - not_null
+      
+      - name: 'id_produto'
+        description: "Chave primária da tabela de produtos product."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'nome_produto'
+        description: "Chave primária da tabela de produtos product"
+        tests:
+          - unique
+          - not_null
+
+      - name: 'custo_padrao_produto'
+        description: "Valor unitário do custo de produção do produto"
+        tests:
+          - unique
+          - not_null

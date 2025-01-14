@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: dim_territory
+    description: 'Tabela de cadastro de localização'
+    columns:
+      - name: 'sk_endereco'
+        description: "Chave substituta da tabela de razao da venda dim_salesreason."
+        tests:
+          - unique
+          - not_null
+      
+      - name: 'id_endereco'
+        description: "Chave primária da tabela de razao da venda salesreason."
+        tests:
+          - unique
+          - not_null
+      
+      - name: 'id_provincia'
+        description: "Chave primária da tabela de razao da venda salesreason."
+        tests:
+          - unique
+          - not_null
+      
+      - name: 'id_territorio_vendas'
+        description: "Chave primária da tabela de razao da venda salesreason."
+        tests:
+          - unique
+          - not_null
+      
+      - name: 'cod_regiao'
+        description: "Chave primária da tabela de razao da venda salesreason."
+        tests:
+          - unique
+          - not_null

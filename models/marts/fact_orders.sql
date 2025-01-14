@@ -1,25 +1,38 @@
 with
     orders as (
         select 
-            soh.*
-            , c.id_pessoa
-            , c.id_loja 
-            , c.id_territorio_cliente  
-            , sp.*
-            , sohsr.id_motivo_venda
-            , sr.id_nome_motivo_venda
-            , sr.id_tipo_motivo_venda   
-        from {{ ref('stg_sales_salesorderheader')}} soh
-        left join {{ ref('stg_sales_customer')}} c
-            on soh.id_cliente = c.id_cliente
-        left join {{ ref('stg_sales_salesperson')}} sp
-            on soh.id_vendedor = sp.id_entidade_empresarial
-        left join {{ ref('stg_sales_salesorderheadersalesreason')}} sohsr
-            on soh.id_pedido = sohsr.id_pedido
-        left join {{ ref('stg_sales_salesreason')}} sr
-            on sohsr.id_motivo_venda = sr.id_motivo_venda
-
+            id_pedido
+            , data_pedido
+            , flag_pedido_online
+            , id_cliente
+            , id_vendedor
+            , id_territorio
+            , subtotal
+            , taxa
+            , frete
+            , total     
+        from {{ ref('stg_sales_salesorderheader')}}
+    ),
+    orders_with_sk as (
+        select
+              {{ numeric_surrogate_key(['id_pedido']) }} as sk_pedido
+            , {{ numeric_surrogate_key(['id_cliente']) }} as sk_cliente
+            , {{ numeric_surrogate_key(['id_vendedor']) }} as sk_vendedor
+            , {{ numeric_surrogate_key(['id_territorio']) }} as sk_territorio
+            , *
+        from orders
     )
 
-select *
-from orders
+select 
+    sk_pedido
+    , data_pedido
+    , flag_pedido_online
+    , sk_cliente
+    , sk_vendedor
+    , sk_territorio
+    , sk_cartao_credito
+    , subtotal
+    , taxa
+    , frete
+    , total     
+from orders_with_sk
