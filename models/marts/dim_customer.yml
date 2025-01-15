@@ -30,3 +30,5 @@ models:
 
       - name: 'id_territorio_vendas'
         description: "Chave primária da tabela de terittórios salesterritory"
+        tests:
+          - not_null

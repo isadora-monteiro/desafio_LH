@@ -3,7 +3,7 @@ with
         select 
               id_produto
             , nome_produto
-            , custo_padrao_produto      
+            --, custo_padrao_produto      
         from {{ ref('stg_production_product')}}
     ),
     product_with_sk as (

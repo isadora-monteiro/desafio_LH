@@ -23,7 +23,7 @@ with
             , id_territorio_vendas  
         from {{ ref('stg_person_stateprovince') }} 
     ),
-    adress as (
+    address as (
         select
               id_endereco
             , endereco
@@ -39,7 +39,7 @@ with
             , st.id_territorio_vendas
             , cr.cod_regiao
             , st.grupo
-        from adress a
+        from address a
         left join stateprovince sp on a.id_provincia = sp.id_provincia  
         left join salesterritory st on sp.id_territorio_vendas = st.id_territorio_vendas
         left join countryregion cr on sp.cod_regiao  = cr.cod_regiao

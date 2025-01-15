@@ -1,5 +1,5 @@
 with
-    source_adress as (
+    source_address as (
         select
               addressid as id_endereco
             , addressline1 as endereco
@@ -10,4 +10,4 @@ with
     )
 
 select *
-from source_adress
+from source_address

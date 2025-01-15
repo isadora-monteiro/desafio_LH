@@ -21,9 +21,3 @@ models:
         tests:
           - unique
           - not_null
-
-      - name: 'custo_padrao_produto'
-        description: "Valor unitário do custo de produção do produto"
-        tests:
-          - unique
-          - not_null

@@ -7,7 +7,7 @@ with
             , customerid as id_cliente
             , salespersonid as id_vendedor
             , territoryid as id_territorio
-            --, creditcardid as id_cartao_credito
+            , shiptoaddressid as id_endereco
             , subtotal as subtotal
             , taxamt as taxa
             , freight as frete

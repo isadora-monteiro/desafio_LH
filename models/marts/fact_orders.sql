@@ -7,6 +7,7 @@ with
             , id_cliente
             , id_vendedor
             , id_territorio
+            , id_endereco
             , subtotal
             , taxa
             , frete
@@ -19,6 +20,7 @@ with
             , {{ numeric_surrogate_key(['id_cliente']) }} as sk_cliente
             , {{ numeric_surrogate_key(['id_vendedor']) }} as sk_vendedor
             , {{ numeric_surrogate_key(['id_territorio']) }} as sk_territorio
+            , {{ numeric_surrogate_key(['id_endereco']) }} as sk_endereco
             , *
         from orders
     )
@@ -30,7 +32,7 @@ select
     , sk_cliente
     , sk_vendedor
     , sk_territorio
-    , sk_cartao_credito
+    , sk_endereco
     , subtotal
     , taxa
     , frete

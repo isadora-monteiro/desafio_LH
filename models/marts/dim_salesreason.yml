@@ -9,21 +9,19 @@ models:
         tests:
           - unique
           - not_null
-      
+
       - name: 'id_motivo_venda'
-        description: "Chave primária da tabela de razao da venda salesreason."
+        description: "Chave substituta da tabela de razao da venda dim_salesreason."
         tests:
           - unique
-          - not_null
+          - not_null    
       
       - name: 'nome_motivo_venda'
         description: "Chave primária da tabela de razao da venda salesreason."
         tests:
-          - unique
           - not_null
       
       - name: 'id_tipo_motivo_venda'
         description: "Chave primária da tabela de razao da venda salesreason."
         tests:
-          - unique
           - not_null

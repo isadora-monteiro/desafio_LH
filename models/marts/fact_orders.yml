@@ -9,12 +9,6 @@ models:
         tests:
           - unique
           - not_null
-      
-      - name: 'id_pedido'
-        description: "Chave primária da tabela de pedidos salesorderheader."
-        tests:
-          - unique
-          - not_null
 
       - name: 'data_pedido'
         description: "data de lançamento do pedido"
@@ -42,21 +36,6 @@ models:
           - not_null
 
       - name: 'sk_endereco'
-        description: "Chave substituta da tabela de territorios dim_territory."
-        tests:
-          - not_null
-
-      - name: 'sk_motivo_venda'
-        description: "Chave substituta da tabela de territorios dim_territory."
-        tests:
-          - not_null
-
-      - name: 'nome_motivo_venda'
-        description: "Chave substituta da tabela de territorios dim_territory."
-        tests:
-          - not_null
-
-      - name: 'tipo_motivo_venda'
         description: "Chave substituta da tabela de territorios dim_territory."
         tests:
           - not_null

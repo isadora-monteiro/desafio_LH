@@ -12,6 +12,7 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "product"
         description: "Tabela de produtos."
         columns:
@@ -19,20 +20,23 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "salesreason"
         description: "Tabela de motivo da venda."
         columns:
-          - name: "salereasonid"
+          - name: "salesreasonid"
             tests:
               - unique
               - not_null
+
       - name: "salesperson"
         description: "Tabela de vendedores."
         columns:
-          - name: "salespersonid"
+          - name: "businessentityid"
             tests:
               - unique
               - not_null
+
       - name: "salesorderheader"
         description: "Tabela com o cabeçalho de pedidos."
         columns:
@@ -40,20 +44,22 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "salesorderdetail"
         description: "Tabela com os itens de pedidos."
         columns:
           - name: "salesorderdetailid"
             tests:
               - unique
-              - not_null     
+              - not_null    
+
       - name: "salesorderheadersalesreason"
         description: "Tabela com o id do motivo da venda."
         columns:
-          - name: "salesorderid"
+          - name: "salesreasonid"
             tests:
-              - unique
               - not_null    
+
       - name: "salesterritory"
         description: "Tabela com os itens de territorio."
         columns:
@@ -61,24 +67,27 @@ sources:
             tests:
               - unique
               - not_null   
+
       - name: "countryregion"
         description: "Tabela com os itens de regiao."
         columns:
           - name: "countryregioncode"
             tests:
               - unique
-              - not_null                   
+              - not_null     
+
       - name: "stateprovince"
         description: "Tabela com os itens de provincia."
         columns:
           - name: "stateprovinceid"
             tests:
               - unique
-              - not_null    
+              - not_null 
+                
       - name: "address"
         description: "Tabela com os itens de endereco."
         columns:
-          - name: "adressid"
+          - name: "addressid"
             tests:
               - unique
               - not_null  

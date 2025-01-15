@@ -33,3 +33,9 @@ models:
         tests:
           - unique
           - not_null
+      
+      - name: 'grupo'
+        description: "Chave primária da tabela de razao da venda salesreason."
+        tests:
+          - unique
+          - not_null
