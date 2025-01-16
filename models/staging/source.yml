@@ -91,3 +91,19 @@ sources:
             tests:
               - unique
               - not_null  
+                              
+      - name: "person"
+        description: "Tabela com os itens de endereco."
+        columns:
+          - name: "businessentityid"
+            tests:
+              - unique
+              - not_null  
+                              
+      - name: "store"
+        description: "Tabela com os itens de endereco."
+        columns:
+          - name: "businessentityid"
+            tests:
+              - unique
+              - not_null  

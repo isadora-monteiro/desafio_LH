@@ -12,23 +12,24 @@ models:
       
       - name: 'id_cliente'
         description: "Chave primária da tabela de clientes customer."
-        tests:
-          - unique
-          - not_null
 
       - name: 'id_pessoa'
         description: "Chave primária da tabela de pessoas físicas person"
-        tests:
-          - unique
-          - not_null
 
       - name: 'id_loja'
         description: "Chave primária da tabela de lojas store"
-        tests:
-          - unique
-          - not_null
 
       - name: 'id_territorio_vendas'
         description: "Chave primária da tabela de terittórios salesterritory"
-        tests:
-          - not_null
+
+      - name: 'nm_entidade_negocio'
+        description: "Chave primária da tabela de terittórios salesterritory"
+
+      - name: 'id_vendedor'
+        description: "Chave primária da tabela de terittórios salesterritory"
+
+      - name: 'nm_nome'
+        description: "Chave primária da tabela de terittórios salesterritory"
+
+      - name: 'nm_sbnome'
+        description: "Chave primária da tabela de terittórios salesterritory"

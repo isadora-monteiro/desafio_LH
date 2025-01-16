@@ -27,12 +27,12 @@ with
 
 select 
     sk_pedido
-    , data_pedido
-    , flag_pedido_online
     , sk_cliente
     , sk_vendedor
     , sk_territorio
     , sk_endereco
+    , data_pedido
+    , flag_pedido_online
     , subtotal
     , taxa
     , frete

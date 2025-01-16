@@ -9,19 +9,35 @@ models:
         tests:
           - unique
           - not_null
-      
+
       - name: 'sk_pedido'
         description: "Chave substituta da tabela de pedidos salesorder."
         tests:
           - not_null
 
       - name: 'sk_produto'
-        description: "Chave primária da tabela de produtos product"
+        description: "Chave substituta da tabela de pedidos salesorder."
+        tests:
+          - not_null
+
+      - name: 'id_pedido_item'
+        description: "Chave substituta da tabela de pedido_items salesorderdetails."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'id_pedido'
+        description: "Chave substituta da tabela de pedidos salesorder."
         tests:
           - not_null
 
       - name: 'quantidade_produto'
         description: "unidades do produto"
+        tests:
+          - not_null
+
+      - name: 'id_produto'
+        description: "Chave substituta da tabela de pedidos salesorder."
         tests:
           - not_null
 

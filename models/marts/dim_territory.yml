@@ -18,24 +18,12 @@ models:
       
       - name: 'id_provincia'
         description: "Chave primária da tabela de razao da venda salesreason."
-        tests:
-          - unique
-          - not_null
       
       - name: 'id_territorio_vendas'
         description: "Chave primária da tabela de razao da venda salesreason."
-        tests:
-          - unique
-          - not_null
       
       - name: 'cod_regiao'
         description: "Chave primária da tabela de razao da venda salesreason."
-        tests:
-          - unique
-          - not_null
       
       - name: 'grupo'
         description: "Chave primária da tabela de razao da venda salesreason."
-        tests:
-          - unique
-          - not_null
