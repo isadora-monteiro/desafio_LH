@@ -18,6 +18,4 @@ select
       sk_motivo_venda_pedido
     , sk_pedido
     , sk_motivo_venda
-    , id_pedido
-    , id_motivo_venda
 from ordersalesreason_with_sk

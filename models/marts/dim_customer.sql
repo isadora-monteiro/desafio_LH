@@ -50,6 +50,8 @@ with
     customer_with_sk as (
         select
             {{ numeric_surrogate_key(['id_cliente']) }} as sk_cliente
+            , {{ numeric_surrogate_key(['id_vendedor']) }} as sk_vendedor
+            , {{ numeric_surrogate_key(['id_territorio_vendas']) }} as sk_territorio_vendas
             , *
         from customer_joined
     )
@@ -58,8 +60,8 @@ select
     sk_cliente
     , tipo_cliente       
     , nm_cliente
-    , id_vendedor 
-    , id_territorio_vendas     
+    , sk_vendedor 
+    , sk_territorio_vendas     
 from customer_with_sk
 
 

@@ -29,9 +29,7 @@ with
         select 
             p.id_produto
             , p.nome_produto
-            , s.id_subcategoria
             , s.nome_subcategoria
-            , s.id_categoria
             , c.nome_categoria
             , p.classificacao
             , p.custo_unit
@@ -49,9 +47,6 @@ with
 
 select 
     sk_produto
-    , id_produto
-    --, id_subcategoria
-    --, id_categoria
     , nome_produto
     , nome_subcategoria 
     , nome_categoria

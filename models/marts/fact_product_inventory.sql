@@ -10,27 +10,15 @@ with
         select 
             sk_produto
             , id_produto
-            , id_subcategoria
-            , id_categoria
-            , nome_produto
-            , nome_subcategoria 
-            , nome_categoria 
-            , classificacao
-            , custo_padrao   
+            , custo_unit   
         from {{ ref('dim_product')}}
     ),
     inventory_joined as (
         select
-            p.sk_produto
-            , p.id_produto
-            , p.id_subcategoria
-            , p.id_categoria
-            , p.nome_produto
-            , p.nome_subcategoria   
-            , p.nome_categoria  
+            p.sk_produto 
             , i.id_localizacao
             , i.volume_produto
-            , p.custo_padrao
+            , p.custo_unit
         from inventory i 
         inner join products p on i.id_produto = p.id_produto
     ),
@@ -44,16 +32,10 @@ with
 select 
     sk_produto_localizacao
     , sk_produto
-    , id_produto
-    , id_subcategoria
-    , id_categoria
-    , nome_produto
-    , nome_subcategoria   
-    , nome_categoria  
     , id_localizacao
     , volume_produto
-    , round(custo_padrao, 2) as custo_padrao
-    , round(volume_produto * custo_padrao, 2) as custo_total
+    , round(custo_unit, 2) as custo_unit
+    , round(volume_produto * custo_unit, 2) as custo_total
 from inventory_with_sk
 
 

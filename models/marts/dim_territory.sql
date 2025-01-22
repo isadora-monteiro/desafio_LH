@@ -1,7 +1,7 @@
 with
     salesterritory as (
         select 
-              id_territorio_vendas  
+            id_territorio_vendas  
             , nome_territorio 
             , cod_regiao
             , grupo
@@ -9,13 +9,13 @@ with
     ),
     countryregion as (
         select
-              cod_regiao
+            cod_regiao
             , nome_regiao 
         from {{ ref('stg_person_countryregion') }} 
     ),
     stateprovince as (
         select
-              id_provincia
+            id_provincia
             , cod_provincia
             , cod_regiao
             , flag_unico_estado
@@ -25,8 +25,7 @@ with
     ),
     address as (
         select
-              id_endereco
-            , endereco
+            id_endereco
             , cidade
             , cod_postal
             , id_provincia  
@@ -34,12 +33,9 @@ with
     ),
     territory as (
         select 
-              a.id_endereco
-            , sp.id_provincia
+            a.id_endereco
             , sp.nome_provincia
-            , st.id_territorio_vendas
             , st.nome_territorio 
-            , cr.cod_regiao
             , cr.nome_regiao 
             , st.grupo
         from address a
@@ -55,5 +51,12 @@ with
         from territory
     )
 
-select *
+select 
+    sk_endereco
+    , cidade
+    , cod_postal
+    , nome_provincia
+    , nome_territorio 
+    , nome_regiao 
+    , grupo
 from territory_with_sk

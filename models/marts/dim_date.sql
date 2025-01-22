@@ -8,7 +8,7 @@ with
     ),
     generated_date as (
         select
-            date_day as data -- Alteração aqui
+            date_day as data
             , day_of_week as dia_da_semana
             , day_of_week_iso as dia_da_semana_iso
             , case
