@@ -2,7 +2,8 @@ with
     salesperson as (
         select 
               id_vendedor
-            , id_territorio_vendedor      
+            , id_territorio_vendedor 
+            , perc_comissao     
         from {{ ref('stg_sales_salesperson')}}
     ),
     salesperson_with_sk as (

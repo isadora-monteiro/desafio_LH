@@ -107,3 +107,27 @@ sources:
             tests:
               - unique
               - not_null  
+                              
+      - name: "productinventory"
+        description: "Tabela com os itens de endereco."
+        columns:
+          - name: "productid"
+            tests:
+              - unique
+              - not_null  
+                              
+      - name: "productsubcategory"
+        description: "Tabela com os itens de endereco."
+        columns:
+          - name: "productsubcategoryid"
+            tests:
+              - unique
+              - not_null  
+                              
+      - name: "productcategory"
+        description: "Tabela com os itens de endereco."
+        columns:
+          - name: "productcategoryid"
+            tests:
+              - unique
+              - not_null  

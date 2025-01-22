@@ -21,3 +21,12 @@ models:
         tests:
           - unique
           - not_null
+
+      - name: 'Classificacao'
+        description: "Chave primária da tabela de produtos product"
+        tests:
+          - not_null
+
+      - name: 'custo_padrao'
+        description: "Chave primária da tabela de produtos product"
+

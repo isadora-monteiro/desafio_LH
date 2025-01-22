@@ -6,7 +6,7 @@ with
             , orderqty as quantidade_produto
             , productid as id_produto
             , specialofferid as id_oferta
-            , unitprice as preco_unit
+            , round(unitprice, 2) as preco_unit
             , unitpricediscount as preco_unit_desconto
         from {{ source('raw_sap_aw', 'salesorderdetail') }}
     )

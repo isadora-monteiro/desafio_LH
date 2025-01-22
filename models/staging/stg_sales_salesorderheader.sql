@@ -2,7 +2,7 @@ with
     source_salesorderheader as (
         select
             cast(salesorderid as int) as id_pedido
-            , orderdate as data_pedido
+            , to_date(LEFT(ORDERDATE, 10)) AS data_pedido
             , onlineorderflag as flag_pedido_online
             , customerid as id_cliente
             , salespersonid as id_vendedor

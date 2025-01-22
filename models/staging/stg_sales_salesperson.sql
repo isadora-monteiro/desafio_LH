@@ -2,7 +2,8 @@ with
     source_salesperson as (
         select
             cast(businessentityid as int) as id_vendedor
-            , territoryid as id_territorio_vendedor     
+            , territoryid as id_territorio_vendedor   
+            , commissionpct as perc_comissao  
         from {{ source('raw_sap_aw', 'salesperson') }}
     )
 

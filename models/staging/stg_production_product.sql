@@ -2,8 +2,11 @@ with
     source_product as (
         select
             cast(productid as int) as id_produto
+            , productsubcategoryid as id_subcategoria
             , name as nome_produto
-            --, standardcost as custo_padrao_produto     
+            , cast(finishedgoodsflag as int) as flag_vendavel
+            , round(standardcost, 2) as custo_unit 
+            , round(listprice, 2) as preco_unit
         from {{ source('raw_sap_aw', 'product') }}
     )
 

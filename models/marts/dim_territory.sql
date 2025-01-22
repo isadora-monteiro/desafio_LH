@@ -36,8 +36,11 @@ with
         select 
               a.id_endereco
             , sp.id_provincia
+            , sp.nome_provincia
             , st.id_territorio_vendas
+            , st.nome_territorio 
             , cr.cod_regiao
+            , cr.nome_regiao 
             , st.grupo
         from address a
         left join stateprovince sp on a.id_provincia = sp.id_provincia  

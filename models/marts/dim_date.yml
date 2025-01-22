@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: dim_date
+    description: 'Tabela de registros dos pedidos'
+    columns:
+      - name: 'data'
+        description: "Chave substituta da tabela de pedido_items salesorderdetails."
+        tests:
+          - not_null
+
+      - name: 'dia_da_semana'
+        description: "Chave substituta da tabela de pedidos salesorder."
+        tests:
+          - not_null
+
+      - name: 'dia_da_semana_iso'
+        description: "Chave substituta da tabela de pedidos salesorder."
+        tests:
+          - not_null
+
+      - name: 'nome_dia_da_semana'
+        description: "Chave substituta da tabela de pedido_items salesorderdetails."
+        tests:
+          - not_null
+
+      - name: 'dia_do_mes'
+        description: "Chave substituta da tabela de pedido_items salesorderdetails."
+        tests:
+          - not_null
+
+      - name: 'semana_do_ano'
+        description: "Chave substituta da tabela de pedidos salesorder."
+        tests:
+          - not_null
+
+      - name: 'mes'
+        description: "Chave substituta da tabela de pedidos salesorder."
+        tests:
+          - not_null
+
+      - name: 'nome_do_mes'
+        description: "Chave substituta da tabela de pedido_items salesorderdetails."
+        tests:
+          - not_null
+          
+      - name: 'bimestre'
+        description: "Chave substituta da tabela de pedidos salesorder."
+        tests:
+          - not_null
+
+      - name: 'trimestre'
+        description: "Chave substituta da tabela de pedidos salesorder."
+        tests:
+          - not_null
+
+      - name: 'semestre'
+        description: "Chave substituta da tabela de pedido_items salesorderdetails."
+        tests:
+          - not_null
