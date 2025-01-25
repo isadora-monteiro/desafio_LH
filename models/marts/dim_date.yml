@@ -2,59 +2,60 @@ version: 2
 
 models:
   - name: dim_date
-    description: 'Tabela de registros dos pedidos'
+    description: 'Tabela de datas'
     columns:
       - name: 'data'
-        description: "Chave substituta da tabela de pedido_items salesorderdetails."
+        description: "data timestamp."
         tests:
+          - unique
           - not_null
 
       - name: 'dia_da_semana'
-        description: "Chave substituta da tabela de pedidos salesorder."
+        description: "dia da semana."
         tests:
           - not_null
 
       - name: 'dia_da_semana_iso'
-        description: "Chave substituta da tabela de pedidos salesorder."
+        description: "dia da semana iso."
         tests:
           - not_null
 
       - name: 'nome_dia_da_semana'
-        description: "Chave substituta da tabela de pedido_items salesorderdetails."
+        description: "nome dia da semana."
         tests:
           - not_null
 
       - name: 'dia_do_mes'
-        description: "Chave substituta da tabela de pedido_items salesorderdetails."
+        description: "dia do mes."
         tests:
           - not_null
 
       - name: 'semana_do_ano'
-        description: "Chave substituta da tabela de pedidos salesorder."
+        description: "semana do ano."
         tests:
           - not_null
 
       - name: 'mes'
-        description: "Chave substituta da tabela de pedidos salesorder."
+        description: "mes."
         tests:
           - not_null
 
       - name: 'nome_do_mes'
-        description: "Chave substituta da tabela de pedido_items salesorderdetails."
+        description: "nome do mes."
         tests:
           - not_null
           
       - name: 'bimestre'
-        description: "Chave substituta da tabela de pedidos salesorder."
+        description: "bimestre."
         tests:
           - not_null
 
       - name: 'trimestre'
-        description: "Chave substituta da tabela de pedidos salesorder."
+        description: "trimestre."
         tests:
           - not_null
 
       - name: 'semestre'
-        description: "Chave substituta da tabela de pedido_items salesorderdetails."
+        description: "semestre."
         tests:
           - not_null

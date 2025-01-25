@@ -38,6 +38,7 @@ models:
     intermediate:
       +materialized: view
     marts: 
+      +schema: prd
       +materialized: table
 
 

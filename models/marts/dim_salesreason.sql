@@ -16,5 +16,4 @@ with
 select 
     sk_motivo_venda
     , nome_motivo_venda  
-    , id_tipo_motivo_venda 
 from salesreason_with_sk

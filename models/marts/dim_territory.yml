@@ -2,28 +2,30 @@ version: 2
 
 models:
   - name: dim_territory
-    description: 'Tabela de cadastro de localização'
+    description: 'Tabela de dimensão de território'
     columns:
       - name: 'sk_endereco'
-        description: "Chave substituta da tabela de razao da venda dim_salesreason."
+        description: "Chave substituta de id_endereco."
         tests:
           - unique
           - not_null
       
-      - name: 'id_endereco'
-        description: "Chave primária da tabela de razao da venda salesreason."
+      - name: 'cidade'
+        description: "Nome da cidade."
         tests:
-          - unique
           - not_null
       
-      - name: 'id_provincia'
-        description: "Chave primária da tabela de razao da venda salesreason."
+      - name: 'cod_postal'
+        description: "Número de código postal."
       
-      - name: 'id_territorio_vendas'
-        description: "Chave primária da tabela de razao da venda salesreason."
+      - name: 'Nome_provincia'
+        description: "Nome da província."
       
-      - name: 'cod_regiao'
-        description: "Chave primária da tabela de razao da venda salesreason."
+      - name: 'Nome_territorio'
+        description: "Nome do território."
       
-      - name: 'grupo'
-        description: "Chave primária da tabela de razao da venda salesreason."
+      - name: 'Nome_regiao'
+        description: "Nome da região."
+      
+      - name: 'Grupo'
+        description: "Nome do Grupo."

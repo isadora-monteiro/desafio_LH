@@ -2,16 +2,13 @@ version: 2
 
 models:
   - name: dim_salesperson
-    description: 'Tabela de cadastro de vendedores'
+    description: 'Tabela dimensão de vendedores'
     columns:
       - name: 'sk_vendedor'
-        description: "Chave substituta da tabela de vendedores dim_salesperson."
+        description: "Chave substituta de id_vendedor."
         tests:
           - unique
           - not_null
       
-      - name: 'id_vendedor'
-        description: "Chave primária da tabela de vendedores salesperson."
-      
-      - name: 'id_territorio_vendedor'
-        description: "Chave primária da tabela de vendedores salesperson."
+      - name: 'perc_comissao'
+        description: "Percentual decimal de comissão do vendedor aplicado ao subtotal do pedido."

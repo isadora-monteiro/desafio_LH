@@ -8,7 +8,7 @@ with
             , specialofferid as id_oferta
             , round(unitprice, 2) as preco_unit
             , unitpricediscount as preco_unit_desconto
-        from {{ source('raw_sap_aw', 'salesorderdetail') }}
+        from {{ source('sales', 'salesorderdetail') }}
     )
 
 select *

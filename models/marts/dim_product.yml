@@ -2,31 +2,33 @@ version: 2
 
 models:
   - name: dim_product
-    description: 'Tabela de cadastro de produtos'
+    description: 'Tabela dimensão de produtos'
     columns:
       - name: 'sk_produto'
-        description: "Chave substituta da tabela de produtos dim_product."
+        description: "Chave substituta de id_produto."
         tests:
           - unique
           - not_null
       
       - name: 'id_produto'
-        description: "Chave primária da tabela de produtos product."
+        description: "Chave primária da tabela product."
         tests:
           - unique
           - not_null
 
       - name: 'nome_produto'
-        description: "Chave primária da tabela de produtos product"
+        description: "nome do produto"
         tests:
           - unique
           - not_null
 
       - name: 'Classificacao'
-        description: "Chave primária da tabela de produtos product"
+        description: "Classificação pela flag_vendavel"
         tests:
           - not_null
 
-      - name: 'custo_padrao'
-        description: "Chave primária da tabela de produtos product"
+      - name: 'custo_unit'
+        description: "custo unitário do produto"
 
+      - name: 'preco_unit'
+        description: "preco unitário do produto"

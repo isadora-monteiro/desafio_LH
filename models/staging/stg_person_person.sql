@@ -13,7 +13,7 @@ with
             end as nm_tipo_pessoa
             , cast(firstname as varchar) as nm_nome
             , cast(lastname as varchar) as nm_sbnome 
-        from {{ source('raw_sap_aw', 'person') }}
+        from {{ source('person', 'person') }}
     )
 
 select *

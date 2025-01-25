@@ -4,7 +4,7 @@ with
             productsubcategoryid as id_subcategoria
             , productcategoryid as id_categoria
             , name as nome_subcategoria
-        from {{ source('raw_sap_aw', 'productsubcategory') }}
+        from {{ source('production', 'productsubcategory') }}
     )
 
 select 

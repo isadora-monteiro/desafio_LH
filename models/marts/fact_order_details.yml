@@ -2,54 +2,40 @@ version: 2
 
 models:
   - name: fact_order_details
-    description: 'Tabela de registros dos pedidos'
+    description: 'Tabela fato dos registros do pedido por produto'
     columns:
       - name: 'sk_pedido_item'
-        description: "Chave substituta da tabela de pedido_items salesorderdetails."
+        description: "Chave substituta de id_pedido_item."
         tests:
           - unique
           - not_null
 
       - name: 'sk_pedido'
-        description: "Chave substituta da tabela de pedidos salesorder."
+        description: "Chave substituta da da id_pedidos de fact_orders."
         tests:
           - not_null
 
       - name: 'sk_produto'
-        description: "Chave substituta da tabela de pedidos salesorder."
-        tests:
-          - not_null
-
-      - name: 'id_pedido_item'
-        description: "Chave substituta da tabela de pedido_items salesorderdetails."
-        tests:
-          - unique
-          - not_null
-
-      - name: 'id_pedido'
-        description: "Chave substituta da tabela de pedidos salesorder."
+        description: "Chave substituta de id_produto de dim_product."
         tests:
           - not_null
 
       - name: 'quantidade_produto'
-        description: "unidades do produto"
+        description: "unidades vendidas do produto."
         tests:
           - not_null
-
-      - name: 'id_produto'
-        description: "Chave substituta da tabela de pedidos salesorder."
-        tests:
-          - not_null
-
-      - name: 'id_oferta'
-        description: "Chave primária da tabela de oferta offer"
 
       - name: 'preco_unit'
-        description: "preco unitário do produto"
+        description: "preco unitário do produto emitido no pedido."
         tests:
           - not_null
 
       - name: 'preco_unit_desconto'
-        description: "preco unitário do produto descontando a oferta"
+        description: "preco unitário do produto incluso desconto emitido no pedido."
+        tests:
+          - not_null
+
+      - name: 'preco_total'
+        description: "produto da 'quantidade_produto' e 'preco_unit'"
         tests:
           - not_null

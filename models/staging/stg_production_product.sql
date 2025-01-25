@@ -7,7 +7,7 @@ with
             , cast(finishedgoodsflag as int) as flag_vendavel
             , round(standardcost, 2) as custo_unit 
             , round(listprice, 2) as preco_unit
-        from {{ source('raw_sap_aw', 'product') }}
+        from {{ source('production', 'product') }}
     )
 
 select *

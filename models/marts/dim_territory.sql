@@ -34,6 +34,9 @@ with
     territory as (
         select 
             a.id_endereco
+            , a.cidade
+            , a.cod_postal
+            , a.id_provincia
             , sp.nome_provincia
             , st.nome_territorio 
             , cr.nome_regiao 

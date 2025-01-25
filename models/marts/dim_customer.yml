@@ -2,34 +2,22 @@ version: 2
 
 models:
   - name: dim_customer
-    description: 'Tabela de cadastro de clientes'
+    description: 'Tabela de dimensão de clientes'
     columns:
       - name: 'sk_cliente'
-        description: "Chave substituta da tabela de clientes dim_customer."
+        description: "Chave substituta de id_cliente."
         tests:
           - unique
           - not_null
-      
-      - name: 'id_cliente'
-        description: "Chave primária da tabela de clientes customer."
 
-      - name: 'id_pessoa'
-        description: "Chave primária da tabela de pessoas físicas person"
+      - name: 'tipo_cliente'
+        description: "Classificação do tipo do cliente por B2B ou B2C"
 
-      - name: 'id_loja'
-        description: "Chave primária da tabela de lojas store"
+      - name: 'nm_cliente'
+        description: "Nome do cliente construído por nm_entidade_negocio ou 'nm_nome' + 'nm_sbnome'"
 
-      - name: 'id_territorio_vendas'
-        description: "Chave primária da tabela de terittórios salesterritory"
+      - name: 'sk_vendedor'
+        description: "Chave substituta da tabela dim_salesperson"
 
-      - name: 'nm_entidade_negocio'
-        description: "Chave primária da tabela de terittórios salesterritory"
-
-      - name: 'id_vendedor'
-        description: "Chave primária da tabela de terittórios salesterritory"
-
-      - name: 'nm_nome'
-        description: "Chave primária da tabela de terittórios salesterritory"
-
-      - name: 'nm_sbnome'
-        description: "Chave primária da tabela de terittórios salesterritory"
+      - name: 'sk_territorio_vendas'
+        description: "Chave substituta da tabela dim_territory"

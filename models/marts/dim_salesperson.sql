@@ -15,6 +15,5 @@ with
 
 select 
     sk_vendedor
-    , id_territorio_vendedor
     , perc_comissao
 from salesperson_with_sk

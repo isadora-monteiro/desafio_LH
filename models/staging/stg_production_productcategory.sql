@@ -3,7 +3,7 @@ with
         select
             productcategoryid as id_categoria
             , name as nome_categoria
-        from {{ source('raw_sap_aw', 'productcategory') }}
+        from {{ source('production', 'productcategory') }}
     )
 
 select 

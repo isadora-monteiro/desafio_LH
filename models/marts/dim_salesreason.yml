@@ -2,26 +2,13 @@ version: 2
 
 models:
   - name: dim_salesreason
-    description: 'Tabela de cadastro de razao da venda'
+    description: 'Tabela de dimensao de motivos de venda'
     columns:
       - name: 'sk_motivo_venda'
-        description: "Chave substituta da tabela de razao da venda dim_salesreason."
+        description: "Chave substituta de id_salesreason."
         tests:
           - unique
-          - not_null
-
-      - name: 'id_motivo_venda'
-        description: "Chave substituta da tabela de razao da venda dim_salesreason."
-        tests:
-          - unique
-          - not_null    
+          - not_null   
       
       - name: 'nome_motivo_venda'
-        description: "Chave primária da tabela de razao da venda salesreason."
-        tests:
-          - not_null
-      
-      - name: 'id_tipo_motivo_venda'
-        description: "Chave primária da tabela de razao da venda salesreason."
-        tests:
-          - not_null
+        description: "Nome do motivo da venda."

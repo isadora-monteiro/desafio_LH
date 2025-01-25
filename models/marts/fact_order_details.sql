@@ -24,7 +24,7 @@ select
     , sk_pedido
     , sk_produto
     , quantidade_produto
-    , id_oferta
+    --, id_oferta
     , round(preco_unit, 2) as preco_unit
     , round(preco_unit_desconto, 2) as preco_unit_desconto 
     , round( (quantidade_produto * preco_unit), 2) as preco_total

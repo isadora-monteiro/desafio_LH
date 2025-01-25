@@ -11,6 +11,7 @@ with
             , round(taxa, 2) as taxa
             , round(frete, 2) as frete
             , round(total, 2) as total
+            , metodo_pagamento
         from {{ ref('stg_sales_salesorderheader')}}
     ),
     orders_with_sk as (
@@ -42,6 +43,7 @@ with
             , o.taxa
             , o.frete
             , o.total
+            , o.metodo_pagamento
         from orders_with_sk o 
         full join salesperson s on o.sk_vendedor = s.sk_vendedor
     )
@@ -58,5 +60,6 @@ select
     , taxa 
     , frete 
     , total
+    , metodo_pagamento
     --, (total - (custo_total_dim + comissao + taxa + frete)) as margem_contribuicao
 from orders_joined

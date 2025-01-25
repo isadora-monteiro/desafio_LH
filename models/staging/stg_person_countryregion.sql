@@ -3,7 +3,7 @@ with
         select
               countryregioncode as cod_regiao
             , name as nome_regiao 
-        from {{ source('raw_sap_aw', 'countryregion') }}
+        from {{ source('person', 'countryregion') }}
     )
 
 select *

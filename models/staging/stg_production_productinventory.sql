@@ -4,7 +4,7 @@ with
             cast(productid as int) as id_produto
             , locationid as id_localizacao
             , quantity as volume_produto     
-        from {{ source('raw_sap_aw', 'productinventory') }}
+        from {{ source('production', 'productinventory') }}
     )
 
 select *

@@ -16,6 +16,7 @@ with
     inventory_joined as (
         select
             p.sk_produto 
+            , i.id_produto
             , i.id_localizacao
             , i.volume_produto
             , p.custo_unit
@@ -32,7 +33,7 @@ with
 select 
     sk_produto_localizacao
     , sk_produto
-    , id_localizacao
+    --, id_localizacao
     , volume_produto
     , round(custo_unit, 2) as custo_unit
     , round(volume_produto * custo_unit, 2) as custo_total

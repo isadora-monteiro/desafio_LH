@@ -47,6 +47,7 @@ with
 
 select 
     sk_produto
+    , id_produto
     , nome_produto
     , nome_subcategoria 
     , nome_categoria

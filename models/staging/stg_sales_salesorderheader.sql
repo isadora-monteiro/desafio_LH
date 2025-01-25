@@ -12,7 +12,12 @@ with
             , taxamt as taxa
             , freight as frete
             , totaldue as total 
-        from {{ source('raw_sap_aw', 'salesorderheader') }}
+            , case
+                when creditcardid is null then 'Outros'
+                else 'Crédito'
+            end as metodo_pagamento
+        from {{ source('sales', 'salesorderheader') }}
+        WHERE data_pedido >= DATE '2011-01-01'
     )
 
 select *

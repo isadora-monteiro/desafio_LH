@@ -2,31 +2,20 @@ version: 2
 
 models:
   - name: fact_ordersalesreason
-    description: 'Tabela de cadastro de razao da venda'
+    description: 'Tabela fato que relaciona pedido com motivos de venda'
     columns:
       - name: sk_motivo_venda_pedido
-        description: "Chave substituta da tabela de razao da venda dim_salesreason."
+        description: "Chave substituta formada por id_pedido e 'id_motivo_venda'."
         tests:
           - unique
           - not_null 
 
       - name: sk_pedido
-        description: "Chave substituta da tabela de razao da venda dim_salesreason."
+        description: "Chave substituta de id_pedido."
         tests:
           - not_null 
 
       - name: sk_motivo_venda
-        description: "Chave substituta da tabela de razao da venda dim_salesreason."
+        description: "Chave substituta de 'id_motivo_venda'."
         tests:
           - not_null 
-
-      - name: 'id_pedido'
-        description: "Chave substituta da tabela de razao da venda dim_salesreason."
-        tests:
-          - not_null    
-      
-      - name: 'id_motivo_venda'
-        description: "Chave primária da tabela de razao da venda salesreason."
-        tests:       
-          - not_null
-      

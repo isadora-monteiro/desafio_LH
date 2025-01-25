@@ -2,22 +2,12 @@ version: 2
 
 models:
   - name: fact_orders
-    description: 'Tabela dos pedidos'
+    description: 'Tabela dos pedidos de venda'
     columns:
       - name: 'sk_pedido'
-        description: "Chave substituta da tabela de pedidos salesorderheader."
+        description: "Chave substituta de id_pedido."
         tests:
           - unique
-          - not_null
-
-      - name: 'data_pedido'
-        description: "data de lançamento do pedido"
-        tests:
-          - not_null
-
-      - name: 'flag_pedido_online'
-        description: "booleano que afirma se o pedido foi efetuado no site "
-        tests:
           - not_null
 
       - name: 'sk_cliente'
@@ -30,13 +20,18 @@ models:
         tests:
           - not_null
 
-      - name: 'sk_territorio'
+      - name: 'sk_endereco'
         description: "Chave substituta da tabela de territorios dim_territory."
         tests:
           - not_null
 
-      - name: 'sk_endereco'
-        description: "Chave substituta da tabela de territorios dim_territory."
+      - name: 'data_pedido'
+        description: "data de lançamento do pedido"
+        tests:
+          - not_null
+
+      - name: 'flag_pedido_online'
+        description: "booleano que afirma se o pedido foi efetuado no site."
         tests:
           - not_null
 
@@ -44,6 +39,9 @@ models:
         description: "somatorio de valores unitários"
         tests:
           - not_null
+
+      - name: 'comissao'
+        description: "valor de comissao para o vendedor do pedido."
 
       - name: 'taxa'
         description: "taxação "

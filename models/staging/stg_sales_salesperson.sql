@@ -4,7 +4,7 @@ with
             cast(businessentityid as int) as id_vendedor
             , territoryid as id_territorio_vendedor   
             , commissionpct as perc_comissao  
-        from {{ source('raw_sap_aw', 'salesperson') }}
+        from {{ source('sales', 'salesperson') }}
     )
 
 select *

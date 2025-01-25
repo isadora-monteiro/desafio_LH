@@ -6,7 +6,7 @@ with
             , city as cidade
             , postalcode as cod_postal
             , stateprovinceid as id_provincia     
-        from {{ source('raw_sap_aw', 'address') }}
+        from {{ source('person', 'address') }}
     )
 
 select *

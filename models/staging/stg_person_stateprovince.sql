@@ -7,7 +7,7 @@ with
             , isonlystateprovinceflag as flag_unico_estado
             , name as nome_provincia
             , territoryid as id_territorio_vendas       
-        from {{ source('raw_sap_aw', 'stateprovince') }}
+        from {{ source('person', 'stateprovince') }}
     )
 
 select *

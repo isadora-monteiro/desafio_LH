@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: fact_product_inventory
+    description: 'Tabela fato com a relação de produtos em estoque e por localização'
+    columns:
+      - name: sk_produto_localizacao
+        description: "Chave substituta formada por id_produto e 'id_localizacao'."
+        tests:
+          - unique
+          - not_null 
+
+      - name: sk_produto
+        description: "Chave substituta de id_produto."
+        tests:
+          - not_null 
+
+      - name: volume_produto
+        description: "quantidade do produto em estoque por localizacao."
+        tests:
+          - not_null 
+
+      - name: custo_unit
+        description: "custo unitário atual do produto em estoque."
+        tests:
+          - not_null 
+
+      - name: custo_total
+        description: "custo total atual do produto em estoque pela quantidade."
+        tests:
+          - not_null 

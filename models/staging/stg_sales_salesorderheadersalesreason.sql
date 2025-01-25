@@ -3,7 +3,7 @@ with
         select
               salesorderid as id_pedido
             , salesreasonid as id_motivo_venda
-        from {{ source('raw_sap_aw', 'salesorderheadersalesreason') }}
+        from {{ source('sales', 'salesorderheadersalesreason') }}
     )
 
 select *
