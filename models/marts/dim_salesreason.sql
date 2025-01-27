@@ -1,7 +1,7 @@
 with
     salesreason as (
         select 
-              id_motivo_venda
+            id_motivo_venda
             , nome_motivo_venda  
             , id_tipo_motivo_venda   
         from {{ ref('stg_sales_salesreason')}}

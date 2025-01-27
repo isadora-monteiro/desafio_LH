@@ -27,16 +27,16 @@ with
     ),    
     product_joined as (
         select 
-            p.id_produto
-            , p.nome_produto
-            , s.nome_subcategoria
-            , c.nome_categoria
-            , p.classificacao
-            , p.custo_unit
-            , p.preco_unit
-        from product p 
-        left join subcategory s on p.id_subcategoria = s.id_subcategoria
-        left join category c on s.id_categoria = c.id_categoria
+            product.id_produto
+            , product.nome_produto
+            , subcategory.nome_subcategoria
+            , category.nome_categoria
+            , product.classificacao
+            , product.custo_unit
+            , product.preco_unit
+        from product 
+        left join subcategory on product.id_subcategoria = subcategory.id_subcategoria
+        left join category on subcategory.id_categoria = category.id_categoria
     ),
     product_with_sk as (
         select

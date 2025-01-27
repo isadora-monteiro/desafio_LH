@@ -1,7 +1,7 @@
 with
     source_address as (
         select
-              addressid as id_endereco
+            addressid as id_endereco
             , addressline1 as endereco
             , city as cidade
             , postalcode as cod_postal

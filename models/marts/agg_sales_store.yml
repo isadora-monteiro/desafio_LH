@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: agg_sales_store
+    description: 'Tabela de dimensão de clientes'
+    columns:
+      - name: 'data_pedido'
+        description: "Data de emissao do pedido"
+        tests:
+          - not_null      
+      - name: 'sk_pedido'
+        description: "Chave substituta de id_pedido."
+        tests:
+          - not_null
+      - name: 'nm_cliente'
+        description: "Nome do cliente construído por nm_entidade_negocio ou 'nm_nome' + 'nm_sbnome'"
+      - name: 'sk_produto'
+        description: "Chave substituta da tabela dim_product"
+        tests:
+          - not_null
+      - name: 'nome_produto'
+        description: "Nome do produto"
+
+      - name: 'quantidade_produto'
+        description: "Quantidade por produto"
+        tests:
+          - not_null

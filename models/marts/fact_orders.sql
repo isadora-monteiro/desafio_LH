@@ -31,21 +31,21 @@ with
     ),
     orders_joined as (
         select
-            o.sk_pedido
-            , o.sk_cliente
-            , o.sk_vendedor
-            , o.sk_endereco
-            , o.data_pedido
-            , o.flag_pedido_online
-            , o.subtotal
-            , s.perc_comissao 
-            , round((o.subtotal * s.perc_comissao), 2) as comissao
-            , o.taxa
-            , o.frete
-            , o.total
-            , o.metodo_pagamento
-        from orders_with_sk o 
-        full join salesperson s on o.sk_vendedor = s.sk_vendedor
+            orders_with_sk.sk_pedido
+            , orders_with_sk.sk_cliente
+            , orders_with_sk.sk_vendedor
+            , orders_with_sk.sk_endereco
+            , orders_with_sk.data_pedido
+            , orders_with_sk.flag_pedido_online
+            , orders_with_sk.subtotal
+            , salesperson.perc_comissao 
+            , round((orders_with_sk.subtotal * salesperson.perc_comissao), 2) as comissao
+            , orders_with_sk.taxa
+            , orders_with_sk.frete
+            , orders_with_sk.total
+            , orders_with_sk.metodo_pagamento
+        from orders_with_sk 
+        full join salesperson on orders_with_sk.sk_vendedor = salesperson.sk_vendedor
     )
 
 select 
@@ -61,5 +61,4 @@ select
     , frete 
     , total
     , metodo_pagamento
-    --, (total - (custo_total_dim + comissao + taxa + frete)) as margem_contribuicao
 from orders_joined

@@ -3,7 +3,6 @@ version: 2
 sources:
   - name: person
     schema: GOOGLE_CLOUD_POSTGRESQL_PERSON
-    loaded_at_field: cast(ind_extraction_date as timestamp)
     tables:
       - name: "salesterritory"
         description: "Tabela de territorio."
@@ -48,7 +47,6 @@ sources:
 
   - name: production
     schema: GOOGLE_CLOUD_POSTGRESQL_PRODUCTION
-    loaded_at_field: cast(ind_extraction_date as timestamp)
     tables:
       - name: "product"
         description: "Tabela de produtos."
@@ -84,7 +82,6 @@ sources:
 
   - name: sales
     schema: GOOGLE_CLOUD_POSTGRESQL_SALES
-    loaded_at_field: cast(ind_extraction_date as timestamp)
     tables:
       - name: "customer"
         description: "Tabela de clientes."

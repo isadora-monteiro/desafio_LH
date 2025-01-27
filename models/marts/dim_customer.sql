@@ -23,29 +23,25 @@ with
     ),
     store as (
         select 
-              id_entidade_negocio
+            id_entidade_negocio
             , nm_entidade_negocio
             , id_vendedor      
         from {{ ref('stg_sales_store')}}
     ),
     customer_joined as (
         select 
-            c.id_cliente
-            , c.tipo_cliente
-            , p.tipo_pessoa
+            customer.id_cliente
+            , customer.tipo_cliente
+            , person.tipo_pessoa
             , case
-                when s.nm_entidade_negocio is null then p.nm_nome_sbnome
-                else s.nm_entidade_negocio
+                when store.nm_entidade_negocio is null then person.nm_nome_sbnome
+                else store.nm_entidade_negocio
             end as nm_cliente
-            --, nm_entidade_negocio
-            --, p.nm_tipo_pessoa
-            , c.id_territorio_vendas    
-            , s.id_vendedor  
-            --, p.nm_nome
-            --, p.nm_sbnome    
-        from customer c
-        left join person p on c.id_pessoa = p.id_entidade_negocio
-        left join store s on c.id_loja = s.id_entidade_negocio
+            , customer.id_territorio_vendas    
+            , store.id_vendedor   
+        from customer
+        left join person on customer.id_pessoa = person.id_entidade_negocio
+        left join store on customer.id_loja = store.id_entidade_negocio
     ),
     customer_with_sk as (
         select

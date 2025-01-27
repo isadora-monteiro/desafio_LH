@@ -1,7 +1,7 @@
 with
     source_person as (
         select
-              businessentityid as id_entidade_negocio
+            businessentityid as id_entidade_negocio
             , persontype as tipo_pessoa
             , case
                 when persontype = 'SC' then 'Store Contact'

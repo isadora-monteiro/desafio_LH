@@ -33,18 +33,18 @@ with
     ),
     territory as (
         select 
-            a.id_endereco
-            , a.cidade
-            , a.cod_postal
-            , a.id_provincia
-            , sp.nome_provincia
-            , st.nome_territorio 
-            , cr.nome_regiao 
-            , st.grupo
-        from address a
-        left join stateprovince sp on a.id_provincia = sp.id_provincia  
-        left join salesterritory st on sp.id_territorio_vendas = st.id_territorio_vendas
-        left join countryregion cr on sp.cod_regiao  = cr.cod_regiao
+            address.id_endereco
+            , address.cidade
+            , address.cod_postal
+            , address.id_provincia
+            , stateprovince.nome_provincia
+            , salesterritory.nome_territorio 
+            , countryregion.nome_regiao 
+            , salesterritory.grupo
+        from address
+        left join stateprovince on address.id_provincia = stateprovince.id_provincia  
+        left join salesterritory on stateprovince.id_territorio_vendas = salesterritory.id_territorio_vendas
+        left join countryregion on stateprovince.cod_regiao  = countryregion.cod_regiao
         
     ),
     territory_with_sk as (

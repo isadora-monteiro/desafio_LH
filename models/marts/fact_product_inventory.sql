@@ -15,13 +15,13 @@ with
     ),
     inventory_joined as (
         select
-            p.sk_produto 
-            , i.id_produto
-            , i.id_localizacao
-            , i.volume_produto
-            , p.custo_unit
-        from inventory i 
-        inner join products p on i.id_produto = p.id_produto
+            products.sk_produto 
+            , inventory.id_produto
+            , inventory.id_localizacao
+            , inventory.volume_produto
+            , products.custo_unit
+        from inventory 
+        inner join products on inventory.id_produto = products.id_produto
     ),
     inventory_with_sk as (
         select
@@ -33,7 +33,6 @@ with
 select 
     sk_produto_localizacao
     , sk_produto
-    --, id_localizacao
     , volume_produto
     , round(custo_unit, 2) as custo_unit
     , round(volume_produto * custo_unit, 2) as custo_total
