@@ -4,14 +4,6 @@ sources:
   - name: person
     schema: GOOGLE_CLOUD_POSTGRESQL_PERSON
     tables:
-      - name: "salesterritory"
-        description: "Tabela de territorio."
-        columns:
-          - name: "territoryid"
-            tests:
-              - unique
-              - not_null   
-
       - name: "countryregion"
         description: "Tabela de regiao."
         columns:
@@ -140,4 +132,11 @@ sources:
             tests:
               - unique
               - not_null  
-       
+              
+      - name: "salesterritory"
+        description: "Tabela de territorio."
+        columns:
+          - name: "territoryid"
+            tests:
+              - unique
+              - not_null  
